@@ -1,0 +1,7 @@
+for i in `git branch | grep -v master`
+do
+git branch -d $i
+if [ $? -eq 0 ]; then
+	git push origin :$i
+fi
+done
